@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import Newsletter from "@/components/home/Newsletter";
@@ -37,20 +38,38 @@ export default function WritingPage() {
               {posts.map((p) => (
                 <li
                   key={p.slug}
-                  className="grid gap-x-8 gap-y-2 border-b border-rule py-8 min-[900px]:grid-cols-[10rem_minmax(0,1fr)]"
+                  className={
+                    "grid items-start gap-x-10 gap-y-5 border-b border-rule py-8 " +
+                    (p.image ? "min-[900px]:grid-cols-[16rem_minmax(0,1fr)]" : "")
+                  }
                 >
-                  <div className="font-sans text-sm text-soft">
-                    <time dateTime={p.isoDate} className="block">
-                      {p.date}
-                    </time>
-                    {p.topic ? (
-                      <span className="mt-1 block text-xs font-semibold uppercase tracking-[0.12em] text-gold-ink">
-                        {p.topic}
-                      </span>
-                    ) : null}
-                  </div>
+                  {p.image ? (
+                    <Link
+                      href={`/writing/${p.slug}`}
+                      className="block w-full max-w-[20rem] min-[900px]:max-w-none"
+                      tabIndex={-1}
+                      aria-hidden="true"
+                    >
+                      <Image
+                        src={p.image}
+                        alt=""
+                        width={512}
+                        height={512}
+                        sizes="(min-width: 900px) 16rem, 20rem"
+                        className="h-auto w-full rounded-[3px]"
+                      />
+                    </Link>
+                  ) : null}
 
                   <div>
+                    <p className="mb-2 mt-0 flex flex-wrap items-center gap-x-3 font-sans text-sm text-soft">
+                      <time dateTime={p.isoDate}>{p.date}</time>
+                      {p.topic ? (
+                        <span className="text-xs font-semibold uppercase tracking-[0.12em] text-gold-ink">
+                          {p.topic}
+                        </span>
+                      ) : null}
+                    </p>
                     <h2 className="mb-2 mt-0 text-[clamp(1.5rem,1.2rem+1.2vw,2.25rem)] font-medium leading-[1.15] tracking-[-0.01em]">
                       <Link
                         href={`/writing/${p.slug}`}

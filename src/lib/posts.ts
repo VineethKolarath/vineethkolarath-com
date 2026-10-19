@@ -11,6 +11,8 @@ export type PostMeta = {
   topic: string;
   excerpt: string;
   readingMinutes: number;
+  image?: string; // for example "/images/posts/bring-a-rough-idea.png"
+  imageAlt?: string; // short description for screen readers
 };
 
 export type Post = PostMeta & {
@@ -47,6 +49,8 @@ function readPost(fileName: string): Post | null {
     topic: String(data.topic ?? ""),
     excerpt: String(data.excerpt ?? ""),
     readingMinutes: Math.max(1, Math.round(words / 200)),
+    image: data.image ? String(data.image) : undefined,
+    imageAlt: data.imageAlt ? String(data.imageAlt) : undefined,
     html: marked.parse(content, { async: false }) as string,
   };
 }

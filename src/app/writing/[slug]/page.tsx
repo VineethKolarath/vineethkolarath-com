@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
@@ -30,6 +31,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.isoDate,
       authors: [site.name],
+      ...(post.image
+        ? {
+            images: [
+              {
+                url: post.image,
+                width: 1024,
+                height: 1024,
+                alt: post.imageAlt ?? post.title,
+              },
+            ],
+          }
+        : {}),
+    },
+    twitter: {
+      card: post.image ? "summary_large_image" : "summary",
     },
   };
 }
@@ -79,6 +95,19 @@ export default async function PostPage({ params }: Props) {
 
       <div className="pb-[clamp(3rem,8vw,5rem)] pt-[clamp(2rem,6vw,4rem)]">
         <div className="frame">
+          {post.image ? (
+            <figure className="mx-auto mb-10 mt-0 max-w-[32rem]">
+              <Image
+                src={post.image}
+                alt={post.imageAlt ?? post.title}
+                width={1024}
+                height={1024}
+                sizes="(min-width: 640px) 32rem, 100vw"
+                className="h-auto w-full rounded-[3px]"
+              />
+            </figure>
+          ) : null}
+
           <article
             className={
               "prose-body mx-auto max-w-[66ch] " +

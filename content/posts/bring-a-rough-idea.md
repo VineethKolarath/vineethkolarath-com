@@ -3,6 +3,8 @@ title: "Bring a Rough Idea"
 date: "20-10-2026"
 topic: "Mentorship"
 excerpt: "Every meaningful project starts somewhere. Often, it begins with a simple thought, a quick sketch, or a few lines written on a phone."
+image: "/images/posts/bring-a-rough-idea.png"
+imageAlt: "The same small boat drawn four times, from a rough pencil scribble to a finished wooden boat."
 draft: false
 ---
 

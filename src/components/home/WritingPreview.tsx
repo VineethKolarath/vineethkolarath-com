@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 
@@ -32,20 +33,37 @@ export default function WritingPreview() {
         ) : (
           <div className="grid gap-9 min-[1100px]:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] min-[1100px]:gap-12">
             <article>
-              <div
-                className="relative mb-[1.1rem] aspect-[16/10] overflow-hidden rounded bg-[linear-gradient(135deg,#3b4a6b,#1d2436)] text-white/20"
-                aria-hidden="true"
-              >
-                <svg className="absolute inset-0 h-full w-full" viewBox="0 0 480 300">
-                  <g fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="90" cy="150" r="36" strokeDasharray="4 6" />
-                    <path d="M126 150 H190 L220 120 H280" />
-                    <rect x="280" y="95" width="110" height="110" rx="6" />
-                    <path d="M390 150 H440" />
-                  </g>
-                  <circle cx="446" cy="150" r="7" fill="currentColor" />
-                </svg>
-              </div>
+              {lead.image ? (
+                <Link
+                  href={`/writing/${lead.slug}`}
+                  className="relative mb-[1.1rem] block aspect-[4/3] overflow-hidden rounded"
+                  tabIndex={-1}
+                  aria-hidden="true"
+                >
+                  <Image
+                    src={lead.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1100px) 58vw, 100vw"
+                    className="object-cover object-center"
+                  />
+                </Link>
+              ) : (
+                <div
+                  className="relative mb-[1.1rem] aspect-[16/10] overflow-hidden rounded bg-[linear-gradient(135deg,#3b4a6b,#1d2436)] text-white/20"
+                  aria-hidden="true"
+                >
+                  <svg className="absolute inset-0 h-full w-full" viewBox="0 0 480 300">
+                    <g fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="90" cy="150" r="36" strokeDasharray="4 6" />
+                      <path d="M126 150 H190 L220 120 H280" />
+                      <rect x="280" y="95" width="110" height="110" rx="6" />
+                      <path d="M390 150 H440" />
+                    </g>
+                    <circle cx="446" cy="150" r="7" fill="currentColor" />
+                  </svg>
+                </div>
+              )}
 
               {lead.topic ? <p className="eyebrow mb-[0.45rem]">{lead.topic}</p> : null}
               <h3 className="mb-2 mt-0 text-[clamp(1.75rem,1.3rem+1.8vw,2.5rem)] font-medium leading-[1.12] tracking-[-0.01em]">

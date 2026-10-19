@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site, primaryNav, menuNav } from "@/lib/site";
@@ -22,15 +23,16 @@ export default function SiteHeader() {
         {/* Brand */}
         <Link
           href="/"
-          className="flex items-center gap-[0.6rem] whitespace-nowrap text-[1.125rem] font-semibold text-night-ink no-underline"
+          className="flex items-center gap-3 whitespace-nowrap text-[1.125rem] font-semibold text-night-ink no-underline"
           onClick={() => setOpen(false)}
         >
-          <span
-            aria-hidden="true"
-            className="grid size-8 place-items-center rounded-full border-[1.5px] border-gold text-[0.8125rem] italic text-gold"
-          >
-            {site.monogram}
-          </span>
+          <Image
+            src="/logo.png"
+            alt=""
+            width={80}
+            height={80}
+            className="size-10 rounded-full border-[1.5px] border-gold object-cover"
+          />
           {site.name}
         </Link>
 
@@ -49,7 +51,7 @@ export default function SiteHeader() {
             ))}
             <li>
               <Link href="/#subscribe" className="btn btn-gold min-h-10! px-4! py-2!">
-                Subscribe
+                Get notified
               </Link>
             </li>
           </ul>
@@ -103,7 +105,7 @@ export default function SiteHeader() {
             onClick={() => setOpen(false)}
             className="btn btn-gold mt-5 w-full"
           >
-            Subscribe
+            Get notified
           </Link>
         </nav>
       )}
