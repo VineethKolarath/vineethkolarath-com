@@ -17,7 +17,7 @@ const sessions: Session[] = [
     text: "A short call on anything related to technology, mentorship or start-ups. Bring your question.",
     meta: "Google Meet \u00b7 IST \u00b7 Limited slots each week",
     cta: "Book 10 minutes",
-    href: "/sessions/intro-call",
+    href: "/sessions#request",
     free: true,
   },
   {
@@ -26,7 +26,7 @@ const sessions: Session[] = [
     text: "A focused conversation on your project, idea or start-up, with time to go deeper.",
     meta: "Google Meet \u00b7 IST",
     cta: "Request a quote",
-    href: "/sessions/quote?type=30-minute",
+    href: "/sessions#request",
     free: false,
   },
   {
@@ -35,7 +35,7 @@ const sessions: Session[] = [
     text: "A one-hour conversation over coffee. Unhurried, with more time if you need it.",
     meta: "By request and confirmation",
     cta: "Request a quote",
-    href: "/sessions/quote?type=coffee-table",
+    href: "/sessions#request",
     free: false,
   },
 ];
@@ -78,7 +78,8 @@ export default function Sessions() {
         </div>
 
         <p className="mb-0 mt-7 font-sans text-sm text-soft">
-          A quote request is answered automatically by email, with the details and the next step.
+          Send your request with the form. I reply to every request by email, with the details and
+          the next step. <Link href="/sessions" className="link">More about sessions</Link>
         </p>
       </div>
     </section>

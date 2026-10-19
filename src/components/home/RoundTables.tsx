@@ -1,28 +1,20 @@
 import Link from "next/link";
+import { getRoundTables, type RoundTable } from "@/lib/roundtables";
 
-type TrackId = "school" | "college";
-
-type RoundTableEvent = {
-  track: TrackId;
-  slug: string;
-  date: string;
-  time: string;
-  venue: string;
-  chairs: number;
-};
-
-// No events yet. Add one here when a date, time and venue are confirmed.
-const events: RoundTableEvent[] = [];
-
-const tracks: { id: TrackId; tag: string; title: string; text: string }[] = [
+const tracks: {
+  id: RoundTable["track"];
+  tag: string;
+  title: string;
+  text: string;
+}[] = [
   {
-    id: "school",
+    id: "Class 1 to 12",
     tag: "Class 1 to 12",
     title: "Young Makers Round Table",
     text: "For school students. Parents and teachers are welcome to sit in.",
   },
   {
-    id: "college",
+    id: "College and above",
     tag: "College and above",
     title: "Makers and Founders Round Table",
     text: "For college students, makers, early-career engineers and first-time founders.",
@@ -30,6 +22,9 @@ const tracks: { id: TrackId; tag: string; title: string; text: string }[] = [
 ];
 
 export default function RoundTables() {
+  // Events come from src/lib/roundtables.ts. Add new ones there.
+  const events = getRoundTables().filter((e) => e.status === "upcoming");
+
   return (
     <section className="band" id="roundtables" aria-labelledby="rt-h">
       <div className="frame">
@@ -56,7 +51,7 @@ export default function RoundTables() {
                 key={t.id}
                 className={
                   "flex flex-col border border-rule border-t-[3px] bg-surface p-[clamp(1.5rem,4vw,2.25rem)] " +
-                  (t.id === "school" ? "border-t-gold" : "border-t-ink")
+                  (t.id === "Class 1 to 12" ? "border-t-gold" : "border-t-ink")
                 }
               >
                 <p className="eyebrow mb-4">{t.tag}</p>
@@ -70,7 +65,9 @@ export default function RoundTables() {
                     <dl className="mb-6 mt-0 border-t border-rule font-sans text-[0.9375rem]">
                       <div className="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-4 border-b border-rule py-[0.7rem]">
                         <dt className="text-soft">Date</dt>
-                        <dd className="m-0 font-medium">{next.date}</dd>
+                        <dd className="m-0 font-medium">
+                          <time dateTime={next.iso}>{next.date}</time>
+                        </dd>
                       </div>
                       <div className="grid grid-cols-[5.5rem_minmax(0,1fr)] gap-4 border-b border-rule py-[0.7rem]">
                         <dt className="text-soft">Time</dt>
