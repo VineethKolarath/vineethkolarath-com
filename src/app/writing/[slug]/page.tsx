@@ -17,6 +17,12 @@ export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
 }
 
+// The light copy made by scripts/make-share-images.mjs.
+// /images/posts/name.png  ->  /images/posts/name-share.jpg
+function shareImageFor(image: string) {
+  return image.replace(/\.(png|jpe?g)$/i, "-share.jpg");
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -35,9 +41,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? {
             images: [
               {
-                url: post.image,
-                width: 1024,
-                height: 1024,
+                url: shareImageFor(post.image),
+                width: 1200,
+                height: 630,
                 alt: post.imageAlt ?? post.title,
               },
             ],
