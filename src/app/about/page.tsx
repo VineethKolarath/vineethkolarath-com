@@ -45,7 +45,7 @@ const together = [
 export default function AboutPage() {
   return (
     <main id="main">
-      <PageHeader eyebrow="About" title="Vineeth K Kolarath" intro="Mentor, teacher and builder." />
+      <PageHeader eyebrow="About" title="Vineeth K Kolarath" intro="Mentor, teacher and engineer." />
 
       <section className="pb-[clamp(2.5rem,6vw,4rem)] pt-[clamp(2rem,6vw,4rem)]">
         <div className="frame">

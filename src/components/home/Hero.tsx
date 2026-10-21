@@ -26,7 +26,7 @@ export default function Hero() {
 
       <div className="frame relative z-[1] min-[980px]:flex min-[980px]:min-h-[min(74vh,46rem)] min-[980px]:items-center">
         <div className="max-w-[52rem] pt-[clamp(4rem,12vw,9rem)] pb-[clamp(4rem,11vw,8rem)]">
-          <p className="eyebrow">Mentor &middot; Teacher &middot; Builder</p>
+          <p className="eyebrow">Mentor &middot; Teacher &middot; Engineer</p>
 
           <h1
             id="hero-h"

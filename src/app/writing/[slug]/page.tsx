@@ -149,7 +149,7 @@ export default async function PostPage({ params }: Props) {
           >
             <b className="mb-1 block font-serif text-xl font-medium text-ink">{site.name}</b>
             <p className="m-0">
-              Mentor, teacher and builder. {site.location}.{" "}
+              Mentor, teacher and engineer. {site.location}.{" "}
               <Link href="/about" className="link">
                 More about me
               </Link>

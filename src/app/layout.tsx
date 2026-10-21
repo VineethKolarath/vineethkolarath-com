@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     template: "%s · Vineeth K Kolarath",
   },
   description:
-    "Mentor, teacher and builder. Writing, books, research, sessions and webinars from Koodali, Kannur, Kerala.",
+    "Mentor, teacher and engineer. Writing, books, research, sessions and webinars from Koodali, Kannur, Kerala.",
   openGraph: {
     title: "Vineeth K Kolarath",
     description:
-      "Mentor, teacher and builder. Writing, books, research, sessions and webinars from Koodali, Kannur, Kerala.",
+      "Mentor, teacher and engineer. Writing, books, research, sessions and webinars from Koodali, Kannur, Kerala.",
     siteName: "Vineeth K Kolarath",
     locale: "en_IN",
     type: "website",
