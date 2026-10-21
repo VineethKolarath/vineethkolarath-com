@@ -253,7 +253,7 @@ And a machine cannot decide for us what is worth doing. People still have to cho
 
 So think of a thinking machine as a powerful helper. One that can perform certain tasks quickly and consistently, but whose work still needs to be understood, tested and checked.
 
-## Why this matters to a student in Kerala
+## Why this matters to a student in Indian states like Kerala
 
 Think about the places around you.
 
