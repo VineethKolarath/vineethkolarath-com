@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PhotoGrid from "@/components/gallery/PhotoGrid";
 import { getAlbum } from "@/lib/gallery";
 
 export const instant = false;
@@ -15,9 +15,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const album = getAlbum(slug);
   if (!album) return { title: "Album not found" };
 
+  const description = album.description ?? `Photos from ${album.title}.`;
+  const first = album.photos[0];
+
   return {
     title: album.title,
-    description: album.description ?? `Photos from ${album.title}.`,
+    description,
+    openGraph: {
+      title: album.title,
+      description,
+      ...(first ? { images: [{ url: first.src, alt: first.alt }] } : {}),
+    },
   };
 }
 
@@ -53,24 +61,7 @@ export default async function AlbumPage({ params }: Props) {
               Photos will be added soon.
             </p>
           ) : (
-            <ul className="mt-8 grid grid-cols-[repeat(auto-fill,minmax(min(100%,17rem),1fr))] gap-6">
-              {album.photos.map((photo) => (
-                <li key={photo.src}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-[3px] bg-[linear-gradient(135deg,#3b4a6b,#1a2030)]">
-                    <Image
-                      src={photo.src}
-                      alt={photo.alt}
-                      fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  {photo.caption ? (
-                    <p className="meta mt-2">{photo.caption}</p>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
+            <PhotoGrid photos={album.photos} />
           )}
 
           <p className="mt-12">
