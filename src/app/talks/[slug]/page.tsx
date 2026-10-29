@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Newsletter from "@/components/home/Newsletter";
@@ -19,9 +20,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const talk = getTalk(slug);
   if (!talk) return {};
 
+  const description = `${talk.title}, ${talk.date}, ${talk.city}.`;
+  const first = talk.images?.[0];
+
   return {
     title: talk.title,
-    description: `${talk.title}, ${talk.date}, ${talk.city}.`,
+    description,
+    openGraph: {
+      title: talk.title,
+      description,
+      type: "article",
+      ...(first ? { images: [{ url: first.src, alt: first.alt }] } : {}),
+    },
   };
 }
 
@@ -37,6 +47,8 @@ export default async function TalkPage({ params }: Props) {
     { label: "Place", value: talk.city },
     { label: "Format", value: talk.format },
   ];
+
+  const images = talk.images ?? [];
 
   return (
     <main id="main">
@@ -75,7 +87,36 @@ export default async function TalkPage({ params }: Props) {
             <p className="mb-0 mt-8 text-soft">
               {talk.description || "More details will be added here."}
             </p>
+          </div>
 
+          {images.length > 0 ? (
+            <section aria-label="Photos from the talk" className="mx-auto mt-12 max-w-[64rem]">
+              <div className="grid gap-6 sm:grid-cols-2">
+                {images.map((img) => (
+                  <figure key={img.src} className="m-0">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={1200}
+                      height={900}
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="aspect-[4/3] h-auto w-full rounded-[3px] object-cover"
+                    />
+                    {img.caption ? (
+                      <figcaption className="mt-3 font-sans text-sm text-soft">
+                        {img.caption}
+                      </figcaption>
+                    ) : null}
+                  </figure>
+                ))}
+              </div>
+              {talk.imageCredit ? (
+                <p className="mb-0 mt-4 font-sans text-xs text-soft">{talk.imageCredit}</p>
+              ) : null}
+            </section>
+          ) : null}
+
+          <div className="mx-auto max-w-[66ch]">
             <div className="mt-10 flex flex-wrap gap-3">
               <Link href="/talks" className="btn btn-outline">
                 All talks

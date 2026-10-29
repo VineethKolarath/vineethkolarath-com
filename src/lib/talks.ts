@@ -1,3 +1,9 @@
+export type TalkImage = {
+  src: string; // file in public/images/talks
+  alt: string; // describes the picture for screen readers
+  caption?: string; // short line shown under the picture
+};
+
 export type Talk = {
   slug: string;
   day: string; // for example "25"
@@ -9,6 +15,8 @@ export type Talk = {
   city: string;
   format: string; // for example "In person"
   description?: string;
+  images?: TalkImage[]; // 4:3 photos, shown under the description
+  imageCredit?: string; // for example "Photos: Deshabhimani"
   upcoming: boolean; // change to false once the talk has taken place
 };
 
@@ -25,8 +33,20 @@ export const talks: Talk[] = [
     city: "Kannur, Kerala",
     format: "In person",
     description:
-      "This talk is part of the Deshabhimani Aksharamuttam Quiz. It is the district level competition. The talk is for a group of selected students. The session sets the base before the big ideas. Learn the basics first. Then build on them, one step at a time.",
-    upcoming: true,
+      "This talk was part of the Deshabhimani Aksharamuttam Quiz, at the district level competition in Kannur. It was for a group of selected students. The function was inaugurated by the Kannur District Collector, Vishnuraj P IAS. K K Ragesh, former MP and CPI(M) Kannur District Secretary, was the chief guest. Former ISRO scientist V P Balagangadharan also spoke, on the topic \u201cRocket Revolution\u201d. My talk was about how to use AI as a mentor, and not as an answer delivery machine. After the session, students gathered around with more questions. How will AI affect our lives? How does it affect the climate? How can privacy be protected? What if AI starts copying itself and builds its own world?",
+    images: [
+      {
+        src: "/images/talks/kannur-2026-10-25-1.jpg",
+        alt: "Vineeth K Kolarath, holding a microphone, speaks with students seated at long tables.",
+        caption: "Talking with students about using AI as a mentor.",
+      },
+      {
+        src: "/images/talks/kannur-2026-10-25-2.jpg",
+        alt: "Vineeth K Kolarath and V P Balagangadharan seated together on the stage, smiling.",
+        caption: "With former ISRO scientist V P Balagangadharan on the stage.",
+      },
+    ],
+    upcoming: false,
   },
   {
     slug: "thrissur-2026-10-18",
