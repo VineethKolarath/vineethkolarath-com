@@ -23,6 +23,20 @@ export type Talk = {
 // Newest first.
 export const talks: Talk[] = [
   {
+    slug: "mattannur-2026-11-05",
+    day: "05",
+    monthYear: "Nov 2026",
+    date: "05-11-2026",
+    time: "1:30 pm",
+    title: "Using AI Effectively in the Classroom",
+    venue: "PRNSS College",
+    city: "Mattannur, Kerala",
+    format: "In person",
+    description:
+      "A session for teachers on how to use AI effectively in their classrooms.",
+    upcoming: true,
+  },
+  {
     slug: "kannur-2026-10-25",
     day: "25",
     monthYear: "Oct 2026",
