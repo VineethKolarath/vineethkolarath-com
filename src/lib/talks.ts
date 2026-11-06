@@ -23,6 +23,20 @@ export type Talk = {
 // Newest first.
 export const talks: Talk[] = [
   {
+    slug: "koodali-2026-11-07",
+    day: "07",
+    monthYear: "Nov 2026",
+    date: "07-11-2026",
+    time: "1:30 pm",
+    title: "Digital Wellness: Healthy Screens, Safe Minds",
+    venue: "Koodali Higher Secondary School",
+    city: "Koodali, Kannur, Kerala",
+    format: "In person",
+    description:
+      "A session for the Digital Wellness Brigade at Koodali Higher Secondary School, as part of the Souhrida Power Brigade. The Power Brigade is a programme of the Career Guidance and Adolescent Counselling Cell of Kerala's Higher Secondary department, run through each school's Souhrida Club. Koodali HSS is one of 140 schools selected across the state. The Digital Wellness Brigade helps students build healthy screen habits, stay safe and private online, recognise misinformation and use technology responsibly.",
+    upcoming: true,
+  },
+  {
     slug: "mattannur-2026-11-05",
     day: "05",
     monthYear: "Nov 2026",
