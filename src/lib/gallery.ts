@@ -27,6 +27,36 @@ export type Album = {
 // Newest first.
 export const albums: Album[] = [
   {
+    slug: "ai-powered-teaching-2026-11-05",
+    title: "AI-Powered Teaching",
+    date: "05-11-2026",
+    place: "Pazhassi Raja NSS College, Mattannur, Kerala",
+    description:
+      "A session for teachers, organised by the college's Research Cell, on using AI in lesson planning, teaching materials, student engagement, assessment and research.",
+    photos: [
+      {
+        src: "/images/talks/mattannur-2026-11-05-1.jpg",
+        alt: "Principal Dr R K Biju speaks at the podium in Pazhassi Hall, with Dr Yamuna K M and Vineeth K Kolarath seated on stage beside the AI-Powered Teaching title slide.",
+        caption: "Principal Dr R K Biju opens the session, with Research Cell coordinator Dr Yamuna K M on stage.",
+      },
+      {
+        src: "/images/talks/mattannur-2026-11-05-2.jpg",
+        alt: "Vineeth K Kolarath seated on stage beside Principal Dr R K Biju, in front of the projection screen.",
+        caption: "With Principal Dr R K Biju on stage.",
+      },
+      {
+        src: "/images/talks/mattannur-2026-11-05-3.jpg",
+        alt: "Vineeth K Kolarath speaks with a microphone in front of the stage, with teachers seated in the foreground.",
+        caption: "Speaking with the teachers in Pazhassi Hall.",
+      },
+      {
+        src: "/images/talks/mattannur-2026-11-05-4.jpg",
+        alt: "Vineeth K Kolarath, holding a microphone, speaks to a hall of seated teachers.",
+        caption: "Teachers from across the college's departments.",
+      },
+    ],
+  },
+  {
     slug: "walk-before-you-drive-2026-10-25",
     title: "Walk Before You Drive",
     date: "25-10-2026",

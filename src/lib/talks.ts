@@ -28,13 +28,35 @@ export const talks: Talk[] = [
     monthYear: "Nov 2026",
     date: "05-11-2026",
     time: "1:30 pm",
-    title: "Using AI Effectively in the Classroom",
-    venue: "PRNSS College",
+    title: "AI-Powered Teaching",
+    venue: "Pazhassi Hall, Pazhassi Raja NSS College",
     city: "Mattannur, Kerala",
     format: "In person",
     description:
-      "A session for teachers on how to use AI effectively in their classrooms.",
-    upcoming: true,
+      "A session for teachers at Pazhassi Raja NSS College, Mattannur, organised by the college's Research Cell, in Pazhassi Hall. We began with what AI is, and what it is not. Then we worked through five areas: lesson planning, creating teaching materials, student engagement, assessment and feedback, and AI in higher education and research. Teachers practised a five-part way to write a prompt: role, context, task, format and limits. In one live activity, they tried to spot an AI \u201challucination\u201d, an invented answer given with confidence. While the session ran, an AI helper built on a Google Sheet drafted feedback on 24 answers in English and Malayalam. The final mark stayed with the teacher. Another prepared lesson slides and handouts. We also discussed student data privacy, why AI detectors should not be trusted on their own, and a suggested one-page AI policy for the college. Each department received a toolkit to continue the work.",
+    images: [
+      {
+        src: "/images/talks/mattannur-2026-11-05-1.jpg",
+        alt: "Principal Dr R K Biju speaks at the podium in Pazhassi Hall, with Dr Yamuna K M and Vineeth K Kolarath seated on stage beside the AI-Powered Teaching title slide.",
+        caption: "Principal Dr R K Biju opens the session, with Research Cell coordinator Dr Yamuna K M on stage.",
+      },
+      {
+        src: "/images/talks/mattannur-2026-11-05-2.jpg",
+        alt: "Vineeth K Kolarath seated on stage beside Principal Dr R K Biju, in front of the projection screen.",
+        caption: "With Principal Dr R K Biju on stage.",
+      },
+      {
+        src: "/images/talks/mattannur-2026-11-05-3.jpg",
+        alt: "Vineeth K Kolarath speaks with a microphone in front of the stage, with teachers seated in the foreground.",
+        caption: "Speaking with the teachers in Pazhassi Hall.",
+      },
+      {
+        src: "/images/talks/mattannur-2026-11-05-4.jpg",
+        alt: "Vineeth K Kolarath, holding a microphone, speaks to a hall of seated teachers.",
+        caption: "Teachers from across the college's departments.",
+      },
+    ],
+    upcoming: false,
   },
   {
     slug: "kannur-2026-10-25",
