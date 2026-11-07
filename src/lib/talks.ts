@@ -33,8 +33,25 @@ export const talks: Talk[] = [
     city: "Koodali, Kannur, Kerala",
     format: "In person",
     description:
-      "A session for the Digital Wellness Brigade at Koodali Higher Secondary School, as part of the Souhrida Power Brigade. The Power Brigade is a programme of the Career Guidance and Adolescent Counselling Cell of Kerala's Higher Secondary department, run through each school's Souhrida Club. Koodali HSS is one of 140 schools selected across the state. The Digital Wellness Brigade helps students build healthy screen habits, stay safe and private online, recognise misinformation and use technology responsibly.",
-    upcoming: true,
+      "A session for the Digital Wellness Brigade at Koodali Higher Secondary School, as part of the Souhrida Power Brigade. The Power Brigade is a programme of the Career Guidance and Adolescent Counselling Cell of Kerala's Higher Secondary department, run through each school's Souhrida Club. Koodali HSS is one of 140 schools selected across the state. The Digital Wellness Brigade helps students build healthy screen habits, stay safe and private online, recognise misinformation and use technology responsibly. In this session, we talked about digital wellness, privacy and data security. We discussed how digital tools, especially AI tools, should be used wisely by students: as a mentor, and not as an answering machine. We also discussed how the brigade can educate others about data privacy and cyber scams, and how to manage screen time. The session was part of Swapnachirakukal, a three-day life skills camp of the Power Brigade.",
+    images: [
+      {
+        src: "/images/talks/koodali-2026-11-07-2.jpg",
+        alt: "A man in a peach shirt and two women sit at a table beneath the Power Brigade banner, while a man in a checked shirt stands at the Koodali HSS podium.",
+        caption: "The formal inaugural function.",
+      },
+      {
+        src: "/images/talks/koodali-2026-11-07-3.jpg",
+        alt: "A man in a checked shirt speaks at a podium to students in coloured caps and black T-shirts, with two women seated in the foreground.",
+        caption: "Students listening during the inaugural function.",
+      },
+      {
+        src: "/images/talks/koodali-2026-11-07-1.jpg",
+        alt: "Vineeth K Kolarath, in a peach shirt, speaks into a microphone in front of seated students wearing coloured caps, beneath the Power Brigade camp banner.",
+        caption: "Interacting with the students.",
+      },
+    ],
+    upcoming: false,
   },
   {
     slug: "mattannur-2026-11-05",
@@ -47,7 +64,7 @@ export const talks: Talk[] = [
     city: "Mattannur, Kerala",
     format: "In person",
     description:
-      "A session for teachers at Pazhassi Raja NSS College, Mattannur, organised by the college's Research Cell, in Pazhassi Hall. We began with what AI is, and what it is not. Then we worked through five areas: lesson planning, creating teaching materials, student engagement, assessment and feedback, and AI in higher education and research. Teachers practised a five-part way to write a prompt: role, context, task, format and limits. In one live activity, they tried to spot an AI \u201challucination\u201d, an invented answer given with confidence. While the session ran, an AI helper built on a Google Sheet drafted feedback on 24 answers in English and Malayalam. The final mark stayed with the teacher. Another prepared lesson slides and handouts. We also discussed student data privacy, why AI detectors should not be trusted on their own, and a suggested one-page AI policy for the college. Each department received a toolkit to continue the work.",
+      "A session for teachers at Pazhassi Raja NSS College, Mattannur, organised by the college's Research Cell, in Pazhassi Hall. We began with what AI is, and what it is not. Then we worked through five areas: lesson planning, creating teaching materials, student engagement, assessment and feedback, and AI in higher education and research. Teachers practised a five-part way to write a prompt: role, context, task, format and limits. In one live activity, they tried to spot an AI “hallucination”, an invented answer given with confidence. While the session ran, an AI helper built on a Google Sheet drafted feedback on 24 answers in English and Malayalam. The final mark stayed with the teacher. Another prepared lesson slides and handouts. We also discussed student data privacy, why AI detectors should not be trusted on their own, and a suggested one-page AI policy for the college. Each department received a toolkit to continue the work.",
     images: [
       {
         src: "/images/talks/mattannur-2026-11-05-1.jpg",
@@ -83,7 +100,7 @@ export const talks: Talk[] = [
     city: "Kannur, Kerala",
     format: "In person",
     description:
-      "This talk was part of the Deshabhimani Aksharamuttam Quiz, at the district level competition in Kannur. It was for a group of selected students. The function was inaugurated by the Kannur District Collector, Vishnuraj P IAS. K K Ragesh, former MP and CPI(M) Kannur District Secretary, was the chief guest. Former ISRO scientist V P Balagangadharan also spoke, on the topic \u201cRocket Revolution\u201d. My talk was about how to use AI as a mentor, and not as an answer delivery machine. After the session, students gathered around with more questions. How will AI affect our lives? How does it affect the climate? How can privacy be protected? What if AI starts copying itself and builds its own world?",
+      "This talk was part of the Deshabhimani Aksharamuttam Quiz, at the district level competition in Kannur. It was for a group of selected students. The function was inaugurated by the Kannur District Collector, Vishnuraj P IAS. K K Ragesh, former MP and CPI(M) Kannur District Secretary, was the chief guest. Former ISRO scientist V P Balagangadharan also spoke, on the topic “Rocket Revolution”. My talk was about how to use AI as a mentor, and not as an answer delivery machine. After the session, students gathered around with more questions. How will AI affect our lives? How does it affect the climate? How can privacy be protected? What if AI starts copying itself and builds its own world?",
     images: [
       {
         src: "/images/talks/kannur-2026-10-25-1.jpg",
@@ -121,5 +138,5 @@ export function getTalk(slug: string): Talk | undefined {
 // For example: "Municipal High School, Kannur, Kerala · 10:30 am · In person"
 export function talkPlace(t: Talk): string {
   const where = [t.venue, t.city].filter(Boolean).join(", ");
-  return [where, t.time, t.format].filter(Boolean).join(" \u00b7 ");
+  return [where, t.time, t.format].filter(Boolean).join(" · ");
 }

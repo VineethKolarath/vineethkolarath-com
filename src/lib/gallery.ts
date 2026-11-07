@@ -27,6 +27,31 @@ export type Album = {
 // Newest first.
 export const albums: Album[] = [
   {
+    slug: "digital-wellness-2026-11-07",
+    title: "Digital Wellness: Healthy Screens, Safe Minds",
+    date: "07-11-2026",
+    place: "Koodali Higher Secondary School, Koodali, Kannur, Kerala",
+    description:
+      "A session for the Digital Wellness Brigade, as part of Swapnachirakukal, a three-day life skills camp of the Power Brigade. We talked about digital wellness, privacy and data security, using AI tools wisely as a mentor, and managing screen time.",
+    photos: [
+      {
+        src: "/images/talks/koodali-2026-11-07-2.jpg",
+        alt: "A man in a peach shirt and two women sit at a table beneath the Power Brigade banner, while a man in a checked shirt stands at the Koodali HSS podium.",
+        caption: "The formal inaugural function.",
+      },
+      {
+        src: "/images/talks/koodali-2026-11-07-3.jpg",
+        alt: "A man in a checked shirt speaks at a podium to students in coloured caps and black T-shirts, with two women seated in the foreground.",
+        caption: "Students listening during the inaugural function.",
+      },
+      {
+        src: "/images/talks/koodali-2026-11-07-1.jpg",
+        alt: "Vineeth K Kolarath, in a peach shirt, speaks into a microphone in front of seated students wearing coloured caps, beneath the Power Brigade camp banner.",
+        caption: "Interacting with the students.",
+      },
+    ],
+  },
+  {
     slug: "ai-powered-teaching-2026-11-05",
     title: "AI-Powered Teaching",
     date: "05-11-2026",
